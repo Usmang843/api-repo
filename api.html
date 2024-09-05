@@ -18,23 +18,21 @@
   -->
     <script>
       const xhr = new XMLHttpRequest(); //it's method in which data receive and send
-      const reqUrl = "http://localhost:4000/api/data";
+      const reqUrl = "http://localhost:4000/usman/api/data";
       xhr.open("GET", reqUrl);
       xhr.onreadystatechange = function () {
-        // console.log(xhr.readyState);
+        console.log(xhr.readyState);
         if (xhr.readyState === 4) {
-          // const data = JSON.parse(this.responseText);
-          //   console.log(data.results); // undefined because it return string first convert into JSON data
+          // const data = this.responseText;
+          // console.log(data.results); // undefined because it return string first convert into JSON data
           const data = JSON.parse(this.responseText);
-            // console.log(data.results[0].cell)
-          document.getElementById('cart').addEventListener('click',()=>{
-            const div = document.createElement('div')
-            div.innerHTML=`
-              <img src="${data.results[0].picture.large}"><br> Cell:  ${data.results[0].cell}
+
+          document.getElementById("cart").addEventListener("click", () => {
+          const div = document.getElementById('cart');
+            div.innerHTML = `
+              <img src="${data.results[0].picture.thumbnail}" height ="200px"><br> Cell:  ${data.results[0].cell}
             `;
-            document.body.appendChild(div)
-          })
-          
+          });
         }
       };
       xhr.send();

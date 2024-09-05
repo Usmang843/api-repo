@@ -6,7 +6,8 @@ const app = express();
 
 app.use(cors());
 
-app.get('/api/data', (req, res) => {
+
+app.get('/usman/api/data', (req, res) => {
   res.json({
     "results": [
       {
@@ -53,15 +54,15 @@ app.get('/api/data', (req, res) => {
           "age": 14
         },
         "phone": "(272) 790-0888",
-        "cell": "(489) 330-2385",
+        "cell": "0305-5959809",
         "id": {
           "name": "SSN",
           "value": "405-88-3636"
         },
         "picture": {
           "large": "https://randomuser.me/api/portraits/men/75.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/men/75.jpg",
-          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        "medium": "https://randomuser.me/api/portraits/med/men/75.jpg",
+          "thumbnail": "../usmanpic.jpg"
         },
         "nat": "US"
       }
